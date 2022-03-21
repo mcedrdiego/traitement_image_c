@@ -21,5 +21,6 @@ make
 ```
 ## Usage
 ```
-./treat_image
+./treat_image path/to/image.bmp 
 ```
+*The output is stored in images directory*
