@@ -45,7 +45,7 @@ int main()
         printf("\t 9. Sobel x de l'image\n");
         printf("\t 10. Gaussien de l'image\n");
         printf("\t 11. Ajout du bruit sur l'image\n");
-        printf("\t 12. Laplacce de l'image\n");
+        printf("\t 12. Laplace de l'image\n");
         printf("\t 0. Quitter \n");
         scanf("%hu", &choix);
         //fin menu
@@ -53,59 +53,59 @@ int main()
         {
         case 1:
             NuancesGris(px_Image, imInfo.Largeur*imInfo.Hauteur);
-            EcrireImage("LenaGris.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaGris.bmp", imInfo, imHeader, px_Image);
             break;
         case 2:
             Binerisation(px_Image, imInfo.Largeur*imInfo.Hauteur, 86 );
-            EcrireImage("LenaB.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaB.bmp", imInfo, imHeader, px_Image);
             break;
         case 3:
             NuancesGris(px_Image, imInfo.Largeur*imInfo.Hauteur);
             Binerisation(px_Image, imInfo.Largeur*imInfo.Hauteur, 86 );
-            EcrireImage("LenaGrisB.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaGrisB.bmp", imInfo, imHeader, px_Image);
             break;
         case 4:
             NegatifImage(px_Image, imInfo.Largeur*imInfo.Hauteur);
-            EcrireImage("LenaNeg.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaNeg.bmp", imInfo, imHeader, px_Image);
             break;
         case 5:
             NegatifImage(px_Image, imInfo.Largeur*imInfo.Hauteur);
             NuancesGris(px_Image, imInfo.Largeur*imInfo.Hauteur);
-            EcrireImage("LenaNegG.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaNegG.bmp", imInfo, imHeader, px_Image);
             break;
         case 6:
             NegatifImage(px_Image, imInfo.Largeur*imInfo.Hauteur);
             Binerisation(px_Image, imInfo.Largeur*imInfo.Hauteur, 86 );
-            EcrireImage("LenaNegB.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaNegB.bmp", imInfo, imHeader, px_Image);
             break;
         case 7:
             NegatifImage(px_Image, imInfo.Largeur*imInfo.Hauteur);
             NuancesGris(px_Image, imInfo.Largeur*imInfo.Hauteur);
             Binerisation(px_Image, imInfo.Largeur*imInfo.Hauteur, 86 );
-            EcrireImage("LenaNegGrisB.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaNegGrisB.bmp", imInfo, imHeader, px_Image);
             break;
         case 8:
             px = Convolution2D(px_Image, imInfo.Largeur, imInfo.Hauteur, sy);
-            EcrireImage("LenaConvSy.bmp", imInfo, imHeader, px);
+            EcrireImage("images/LenaConvSy.bmp", imInfo, imHeader, px);
             break;
         case 9:
             px = Convolution2D(px_Image, imInfo.Largeur, imInfo.Hauteur, sx);
-            EcrireImage("LenaConvSx.bmp", imInfo, imHeader, px);
+            EcrireImage("images/LenaConvSx.bmp", imInfo, imHeader, px);
             free(px);
 	    break;
         case 10:
             px = Convolution2D(px_Image, imInfo.Largeur, imInfo.Hauteur, gauss);
-            EcrireImage("LenaConvGauss.bmp", imInfo, imHeader, px);
+            EcrireImage("images/LenaConvGauss.bmp", imInfo, imHeader, px);
             free(px);
             break;
         case 11:
             ajoutBruit(px_Image, imInfo.Largeur*imInfo.Hauteur,100);
-            EcrireImage("LenaBruit.bmp", imInfo, imHeader, px_Image);
+            EcrireImage("images/LenaBruit.bmp", imInfo, imHeader, px_Image);
             break;
         case 12:
             px = Convolution2D(px_Image, imInfo.Largeur, imInfo.Hauteur, sx);
             py = Convolution2D(px_Image, imInfo.Largeur, imInfo.Hauteur, sy);
-            EcrireImage("LenaLapl.bmp", imInfo, imHeader, Laplacian(px, py, imInfo.Largeur*imInfo.Hauteur));
+            EcrireImage("images/LenaLapl.bmp", imInfo, imHeader, Laplacian(px, py, imInfo.Largeur*imInfo.Hauteur));
             free(py); free(px);
             break;
         case 0:
